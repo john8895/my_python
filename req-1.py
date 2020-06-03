@@ -27,7 +27,20 @@ title_tag = soup.title
 # print(a_tag)
 
 # 不使用遞迴搜尋，僅尋找次一層的子節點
-soup.html.find_all("title", recursive=False)
+# soup.html.find_all("title", recursive=False)
+
+# 根據 id 搜尋
+# link2_tag = soup.find(id='link2')
+# print(link2_tag)
+
+# 搜尋 href 屬性為 /my_link1 的 a 節點
+# a_tag = soup.find_all("a", href="/my_link1")
+# print(a_tag)
+
+# 以正規表示法比對超連結網址
+# import re
+# links = soup.find_all(href=re.compile("^/my_link\d"))
+# print(links)
 
 # a_tags = soup.find_all('a')
 # for tag in a_tags:
