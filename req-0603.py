@@ -8,7 +8,7 @@ html_doc = """
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我是網頁標題</title>
 </head>
 <body>
 <p class="title">
@@ -26,14 +26,18 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 # soup = BeautifulSoup(html_doc, 'html.parser', from_encoding='utf-8')
 
 print('獲取所有的連結')
+# links = soup.find_all('a')
+# for link in links:
+#     print(link.name, link['href'], link.text)
 links = soup.find_all('a')
 for link in links:
     print(link.name, link['href'], link.text)
 
 print('獲取指定的連結')
-link_node = soup.find('a', href='http://www.google.com.tw')
+# link_node = soup.find('a', href='http://www.google.com.tw')
+# print(link_node.name, link_node['href'], link_node.text)
+link_node = soup.find('a', href='http://www.kimo.com.tw')
 print(link_node.name, link_node['href'], link_node.text)
-
 
 # print('正則匹配')
 # link_node2 = soup.find(href=re.compile("/.*[kimo].*/"))
@@ -45,13 +49,18 @@ print(link_node.name, link_node['href'], link_node.text)
 # 網頁標題 HTML 標籤
 # title_tag = soup.title
 # print(title_tag)
+title_tag = soup.title
+print(title_tag)
 
 # 網頁的標題文字
 # print(title_tag.string)
+print('網頁的標題文字:', title_tag.string)
 
 # 搜尋所有超連結與粗體字
 # tags = soup.find_all(["a", "b"])
 # print(tags)
+
+
 # 限制搜尋結果數量
 # tags = soup.find_all(["a", "b"], limit=2)
 # print(tags)
