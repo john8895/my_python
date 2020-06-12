@@ -5,9 +5,16 @@ from urllib.error import HTTPError
 from urllib.request import urlopen
 # 引入 BS4
 from bs4 import BeautifulSoup
+import warnings
+warnings.filterwarnings('ignore')
 
-df = pd.DataFrame(columns=['a', 'b'])
-pd.Series([資料1, 資料2], index=['a', 'b'])
+pd.DataFrame(columns=['總合評分'])
+
+# 步驟：
+# df = pd.DataFrame(columns=['a', 'b'])
+# s = pd.Series([資料1, 資料2], index=['a', 'b'])
+# df = df.append(s, ignore_index=True)
+# df.to_csv('.csv', encoding='utf-8', index=False)
 
 page = 59
 while True:
